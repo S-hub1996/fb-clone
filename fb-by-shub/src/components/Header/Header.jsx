@@ -19,16 +19,16 @@ const Header = () => {
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/150px-Facebook_f_logo_%282021%29.svg.png" alt="" />
         <div className="header_input">
         <SearchIcon/>
-        <input type="text" />
+        <input type="text" placeholder='Search Facebook'/>
         </div>
         
       </div>
       
       <div className="header_center">
-            <div className="header_option">
+            <div className="header_option header_option--active">
               <HomeIcon fontSize="large"/>
             </div>
-            <div className="header_option">
+            <div className="header_option ">
               <OndemandVideoIcon fontSize="large"/>
             </div>
             <div className="header_option">
@@ -45,7 +45,7 @@ const Header = () => {
       <div className="header_right">
         <div className="header_info">
           <Avatar src="https://avatars.githubusercontent.com/u/94439105?v=4"/>
-          <h4>Shubham Verma</h4>
+          <h4>Shubham</h4>
         </div>
         <IconButton>
           <AppsIcon/>
