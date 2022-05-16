@@ -12,7 +12,7 @@ transition:transform 100ms ease-in;
 cursor:pointer;
 }
 .story:hover{
-    transform: scale(1.07);
+    transform: scale(1.03);
 
 }
 .story_avatar{
@@ -21,7 +21,7 @@ cursor:pointer;
 }
 .story> h4{
     position: relative;
-    bottom: 20px;
+    top: 100px;
     left: 20px;
-    color:white;
+    color:#eff2f5;
 }
