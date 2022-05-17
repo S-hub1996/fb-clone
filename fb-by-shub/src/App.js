@@ -3,15 +3,17 @@ import Header from '../src/components/Header/Header'
 import Sidebar from '../src/components/Sidebar/Sidebar';
 import Feed from '../src/components/Feed/Feed'
 import Widgets from '../src/components/Widgets/Widgets'
-// import Login from '../src/components/Login/Login'
+import Login from '../src/components/Login/Login'
+import { useStateValue } from './StateProvider';
 function App() {
-  const user= null;
+  const [{user},dispatch]= useStateValue();
+  // const user= null;
   return (
     <div className="app">
       {!user?
       (
-        <h1>Login</h1>
-      // <Login/>
+        // <h1>Login</h1>
+      <Login/>
       ):(
         <>
         <Header/>

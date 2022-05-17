@@ -1,13 +1,21 @@
 import { Button } from '@mui/material'
 import React from 'react'
 import "./Login.css";
-import {auth,provider} from "./Firebase"
+import {auth,provider} from "./Firebase";
+import { signInWithPopup } from 'firebase/auth';
+import { actionTypes } from '../../reducer';
+import { useStateValue } from '../../StateProvider';
 const Login = () => {
+const [state,dispatch]=useStateValue();
     const signin = ()=>{
-        auth.signInWithPopup(provider)
+      signInWithPopup(auth,provider)
         .then(result=>{
-            console.log(result)
-        }).catch((error)=>{alert(error)})
+          dispatch({
+            type:actionTypes.SET_USER,
+            user:result.user,
+          })
+            // console.log(result.user);
+        }).catch((error)=>{alert(error.message)})
     };
   return (
     <div className="login">
