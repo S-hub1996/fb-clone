@@ -4,8 +4,11 @@ import {Avatar} from "@mui/material"
 import VideocamIcon from '@mui/icons-material/Videocam';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
-const MessageSender = () => {
+import { useStateValue } from '../../StateProvider';
 
+
+const MessageSender = () => {
+const [{user},dispatch]= useStateValue();
 const [input,setInput] = useState('')
 const [imageUrl,setImageUrl] = useState('')
 
@@ -21,9 +24,9 @@ setImageUrl("");
   return (
     <div className="messageSender">
       <div className="messageSender_top">
-      <Avatar src="https://avatars.githubusercontent.com/u/94439105?v=4"/>
+      <Avatar src={user.photoURL}/>
           <form>
-              <input type="text" placeholder={`What's on Your Mind ?`}
+              <input type="text" placeholder={`What's on Your Mind ?${user.displayName}`}
               className="messageSender_input"
               value={input}
               onChange={(e)=>setInput(e.target.value)}/>

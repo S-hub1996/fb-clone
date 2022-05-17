@@ -12,7 +12,10 @@ import AppsIcon from '@mui/icons-material/Apps';
 import ExpandCircleDownSharpIcon from '@mui/icons-material/ExpandCircleDownSharp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import EmailIcon from '@mui/icons-material/Email';
+import { useStateValue } from '../../StateProvider';
 const Header = () => {
+
+  const [{user},dispatch]= useStateValue();
   return (
     <div className="header">
       <div className="header_left">
@@ -44,8 +47,8 @@ const Header = () => {
       
       <div className="header_right">
         <div className="header_info">
-          <Avatar src="https://avatars.githubusercontent.com/u/94439105?v=4"/>
-          <h4>Shubham</h4>
+          <Avatar src={user.photoURL}/>
+          <h4>{user.displayName}</h4>
         </div>
         <IconButton>
           <AppsIcon/>
